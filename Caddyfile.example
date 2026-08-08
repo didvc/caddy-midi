@@ -1,0 +1,22 @@
+midi.example.com {
+	root * /srv/midi
+
+	# Any request for a .mid or .midi under the root is synthesized through the
+	# SoundFont and returned as audio/wav. Everything else falls through to
+	# file_server untouched.
+	midi {
+		soundfont /srv/soundfonts/GeneralUser-GS.sf2
+		sample_rate 44100
+		tail 3s
+		cache /var/cache/caddy-midi
+	}
+
+	file_server browse
+
+	encode zstd gzip
+}
+
+# A browser plays the result with no JavaScript, because the response is WAV
+# regardless of the .mid request path:
+#
+#   <audio controls src="/hymns/nearer-my-god.mid"></audio>

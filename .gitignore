@@ -1,0 +1,7 @@
+# Binaries produced by `xcaddy build`
+/caddy
+/caddy-midi
+
+# Local Caddy config and rendered-audio cache
+/Caddyfile
+/cache/
