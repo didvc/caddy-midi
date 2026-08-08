@@ -143,3 +143,7 @@ go test -race ./...
 The suite builds its own SoundFont and MIDI file in memory — a one-preset `.sf2`
 wrapping a looping sine sample, and a format-0 SMF — so there are no binary
 fixtures and no external assets to fetch.
+
+## License
+
+Apache 2.0. See [LICENSE](LICENSE).
